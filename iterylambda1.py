@@ -7,6 +7,9 @@ from collections.abc import Iterator
 
 
 class PrimeIterator(Iterator):
+    """
+    Esta clase es un iterador que devuelve números primos hasta un máximo.
+    """
     def __init__(self, max_number: int):
         self.__max_number = max_number
         self.n = 0
@@ -19,6 +22,9 @@ class PrimeIterator(Iterator):
         return self.n
 
     def __is_prime(self, number):
+        """
+        Método oculto que detecta si un número es primo.
+        """
         if number - int(number) != 0:
             raise ValueError("is_prime function cannot receive floating numbers.")
         if number < 2:
@@ -37,6 +43,9 @@ class PrimeIterator(Iterator):
             return prime_detection
 
     def __find_next_prime(self, number):
+        """
+        Devuelve el siguiente número primo.
+        """
         result = number
         while True:
             result += 1
